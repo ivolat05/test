@@ -1,0 +1,106 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: 'Gilroy';
+}
+
+a {
+	text-decoration: none;
+	transition: .4s;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+	background: none;
+	padding: 0;
+	transition: .4s;
+}
+
+
+.page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	overflow: hidden;
+}
+
+/* убираем тени safari */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.--stop-scroll {
+
+	@media(max-width:772px) {
+		overflow: hidden;
+	}
+}
+
+.letter-line {
+	color: transparent;
+	-webkit-text-stroke: 2px #FFFFFF;
+	text-stroke: 2px #FFFFFF;
+}
+
+.btn {
+	width: 185px;
+	min-height: 40px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+
+	color: #222222;
+
+	border: 1px solid rgba(34, 34, 34, 0.3);
+	transition: .4s;
+
+	&::after {
+		content: "";
+		width: 24px;
+		height: 1px;
+		background: rgba(34, 34, 34, 0.3);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: .4s;
+	}
+
+	@media(hover:hover) {
+		&:hover {
+			border-color: #222;
+
+			&::after {
+				background: #222;
+			}
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			border-color: #222;
+
+			&::after {
+				background: #222;
+			}
+		}
+	}
+}
